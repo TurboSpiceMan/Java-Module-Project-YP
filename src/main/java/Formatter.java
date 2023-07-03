@@ -1,11 +1,15 @@
 public class Formatter {
     public String formatPrice(double price){
-        if (Math.floor(price) <=1 ){
+        if (Math.floor(price) % 10 == 1 && Math.floor(price) != 11){
             return " рубль";
-        } else {
+        } else if ((Math.floor(price) % 10 == 2 ||
+                Math.floor(price) % 10 == 3 ||
+                Math.floor(price) % 10 == 4)
+                && (Math.floor(price) < 10 || Math.floor(price) > 20)) {
             return " рубля";
+        } else {
+            return " рублей";
         }
     }
-
     }
 

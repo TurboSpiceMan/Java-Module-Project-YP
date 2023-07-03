@@ -4,7 +4,7 @@ public class Calculator {
     public double finalPrice = 0;
 
     //Основная логика калькулятора
-    public void toCount(){
+    public void count(){
         while (true) {
             System.out.println("Введите название товара :");
             String name = Main.scanner.next();
@@ -26,8 +26,8 @@ public class Calculator {
                     System.out.println("Введено некоректное значение. Повторите ввод:");
                 }
             } while(true);
-            toList(name,price);
-            toCheck(price);
+            listing(name,price);
+            check(price);
             System.out.println("Хотите добавить еще один товар? Введите \"Завершить\" для итогового подсчета.");
             String confirm = Main.scanner.next();
             if(confirm.equalsIgnoreCase("завершить")){
@@ -38,13 +38,13 @@ public class Calculator {
         perPersonCheck();
     }
     //Список всех товаров
-    public void toList(String name, double price){
+    public void listing(String name, double price){
         Formatter formatter = new Formatter();
         productNameAndPrice =  productNameAndPrice.concat(name.trim()).concat(" - " + price + formatter.formatPrice(price) + "\n");
         System.out.println("Товар успешно добавлен.");
     }
     //Подсчет общей суммы заказа
-    public void toCheck(double price){
+    public void check(double price){
         productPrice += price;
     }
     //Расчет на каждого гостя
