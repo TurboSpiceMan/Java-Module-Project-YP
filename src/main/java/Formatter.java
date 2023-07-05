@@ -1,6 +1,6 @@
 public class Formatter {
     public String formatPrice(double price){
-        if (Math.floor(price) % 10 == 1 && Math.floor(price) != 11){
+        if (Math.floor(price) <= 1){
             return " рубль";
         } else if ((Math.floor(price) % 10 == 2 ||
                 Math.floor(price) % 10 == 3 ||
