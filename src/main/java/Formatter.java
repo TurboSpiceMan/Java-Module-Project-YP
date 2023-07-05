@@ -5,7 +5,7 @@ public class Formatter {
         } else if ((Math.floor(price) % 10 == 2 ||
                 Math.floor(price) % 10 == 3 ||
                 Math.floor(price) % 10 == 4)
-                && (Math.floor(price) < 10 || Math.floor(price) > 20)) {
+                && (Math.floor(price) % 100 < 10 || Math.floor(price) % 100 > 20)) {
             return " рубля";
         } else {
             return " рублей";
